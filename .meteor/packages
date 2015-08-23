@@ -10,3 +10,5 @@ insecure
 coffeescript
 fourseven:scss
 mquandalle:jade
+momentjs:moment
+perak:markdown

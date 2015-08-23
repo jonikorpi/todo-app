@@ -35,15 +35,20 @@ head
   meta(content="@jonikorpi"   property="twitter:site")
   meta(name="format-detection" content="telephone=no")
 
-body
-  
-  .container
-    header
-      h1 Todo List
-  
-  ul
-    each tasks
-      +task
+body  
+      
+  each weekDays
+    +day
 
-template(name="task")
-  li #{text}
+template(name="day")
+  .day("data-machine"=machine)
+    h1 
+      = human
+      if today
+        strong today
+    each this
+      +text
+
+template(name="text")
+  form.todo-input
+    input(type="text" name="text" value=text)
